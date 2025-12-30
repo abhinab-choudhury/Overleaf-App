@@ -9,11 +9,14 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 const config: ForgeConfig = {
   packagerConfig: {
+    icon: './assets/icon',
     asar: true,
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
+    new MakerSquirrel({
+      name: 'overleaf_desktop',
+    }),
     new MakerZIP({}, ['darwin']),
     new MakerRpm({}),
     new MakerDeb({}),
